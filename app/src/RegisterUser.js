@@ -29,8 +29,8 @@ export const RegisterUser = ()=>{
     }
   return(
     <Container>
-      <center>
-      <Card className="mt-3" style={{background: 'linear-gradient(to right, #c59fcb, #A770b2)', textAlign:'left', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)', width:'400px'}}>
+      
+      <Card className="mt-3">
         <Card.Body>
           <Card.Title className="text-center">Registrate</Card.Title> <hr/>
           <Form>
@@ -50,11 +50,11 @@ export const RegisterUser = ()=>{
               <Form.Label>Contraseña</Form.Label>
               <Form.Control placeholder="Ingresa una contraseña" name="password" type="password" onChange={onChangeRegister}/>
             </Form.Group>
-            <Button className="mt-3" variant="success" onClick={onSubmit}>Registrate</Button>
+            <Button className="mt-3" onClick={onSubmit}>Registrate</Button>
           </Form>
         </Card.Body>
       </Card>
-      </center>
+      
       </Container>
       )
 }

@@ -32,13 +32,11 @@ const App = () => {
   }
   return (
     
-    <Container className="mt-3" style={{}}>
-<center>
-      <Card style={{ background: 'linear-gradient(to right, #cca9dd, #B2B5E0)', textAlign:'left', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)', width: '400px' }}>
+    <Container className="mt-3" >
+      <Card style={{width:"60%"}}>
 
         <Card.Body>
           <Card.Title className="text-center">ToDo List</Card.Title>
-          <hr></hr>
 
           <Form>
             <Form.Group className="mb-3">
@@ -51,13 +49,13 @@ const App = () => {
               <Form.Control placeholder="Ingresa tu contraseña" type="password" name="password" onChange={onChange}/>
             </Form.Group>
 
-            <Button className="mt-2" variant="success" onClick={onSubmit}>Ingresar</Button>
+            <Button className="mt-2" onClick={onSubmit}>Ingresar</Button>
             <Button href="/RegisterUser">Registrate</Button>
 
           </Form>
         </Card.Body>
       </Card>
-      </center>
+     
     </Container>
   )
 }

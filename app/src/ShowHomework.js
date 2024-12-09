@@ -22,7 +22,7 @@ export const ShowHomework = () => {
                     </NavItem>
                 </Nav>
             </Navbar>
-            <Card style={{ background: "linear-gradient(to right, #c59fcb, #A770b2)", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)" }}>
+            <Card >
                 <Card.Body>
                     <h3>Bienvenido {user.name}</h3>
                     <Card.Title>{user.rol == "administrator" ? "Tareas Creadas" : "Tus tareas:"}</Card.Title>

@@ -68,12 +68,12 @@ export const ListHomework = () => {
                                 <Card.Text>{date}</Card.Text>
                                 <Row>
                                     <Col>
-                                        <Button variant='outline-success' onClick={() => handleEditClick({ title, description, date, _id })}>
+                                        <Button onClick={() => handleEditClick({ title, description, date, _id })}>
                                             Editar
                                         </Button>
                                     </Col>
                                     <Col>
-                                        <Button variant="outline-danger" onClick={() => deleteHomework(_id)}>
+                                        <Button onClick={() => deleteHomework(_id)}>
                                             Eliminar
                                         </Button>
                                     </Col>
@@ -84,7 +84,6 @@ export const ListHomework = () => {
                 ))}
             </Row>
 
-            {/* Modal para editar tarea */}
             <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Editar Tarea</Modal.Title>
@@ -93,37 +92,17 @@ export const ListHomework = () => {
                     <Form onSubmit={handleEditSubmit}>
                         <Form.Group className="mb-3">
                             <Form.Label>Título</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="title"
-                                value={selectedHomework.title}
-                                onChange={handleInputChange}
-                                required
-                            />
+                            <Form.Control type="text"  name="title" value={selectedHomework.title} onChange={handleInputChange} required />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Descripción</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="description"
-                                value={selectedHomework.description}
-                                onChange={handleInputChange}
-                                required
-                            />
+                            <Form.Control type="text"  name="description" value={selectedHomework.description} onChange={handleInputChange} required />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Fecha</Form.Label>
-                            <Form.Control
-                                type="date"
-                                name="date"
-                                value={selectedHomework.date}
-                                onChange={handleInputChange}
-                                required
-                            />
+                            <Form.Control type="date" name="date" value={selectedHomework.date} onChange={handleInputChange} required/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Guardar Cambios
-                        </Button>
+                        <Button type="submit">Actualizar Tarea</Button>
                     </Form>
                 </Modal.Body>
             </Modal>

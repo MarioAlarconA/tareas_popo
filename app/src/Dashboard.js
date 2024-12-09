@@ -45,15 +45,12 @@ export const Dashboard = () => {
             <Navbar>
                 <Nav >
                     <NavItem>
-                        <NavLink>Home</NavLink>
-                    </NavItem>
-                    <NavItem>
                     <NavLink onClick={() => logout()}>Cerrar sesión</NavLink>
                     </NavItem>
                 </Nav>
             </Navbar>
 
-            <Card style={{ background: "linear-gradient(to right, #c59fcb, #A770b2)", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)" }}>
+            <Card>
 
                 <Card.Body>
                     <Card.Title>Bienvenido {user.name} </Card.Title>

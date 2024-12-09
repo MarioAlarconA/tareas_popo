@@ -36,7 +36,7 @@ export const CreateHomework = () => {
     const sendData = async () => {
         try {
             await axios.post("http://localhost:4000/homework/create", createHomework)
-            alert("Tarea guardada alv")
+            alert("Tarea Guardada")
             navigate("/ShowHomework")
         } catch (error) {
             alert("Error al guardar")
@@ -59,7 +59,7 @@ export const CreateHomework = () => {
     }
 
     return (
-        <Container style={{ width: "100%", height: "100%" }}>
+        <Container>
             <Navbar>
                 <Nav >
                     <NavItem>
@@ -72,22 +72,14 @@ export const CreateHomework = () => {
             </Navbar>
             <Card className="text-center" border="light">
                 <CardBody>
-                    <hr style={{ height: "5px", backgroundColor: "blueviolet" }} />
-                    <CardTitle style={{ fontWeight: "bold", fontSize: "30px" }} className="mt-3 mb-3">Crear Tareas</CardTitle>
-                    <hr style={{ height: "5px", backgroundColor: "blueviolet" }} />
-                    <Row>
-                        <Col className="text-center">
-                            <Button variant="success" onClick={addHomework}>Agregar tarea</Button>
-                        </Col>
-                        <Col className="text-center">
-                            <Button variant="success" onClick={sendData}>Guardar tarea</Button>
-                        </Col>
-                    </Row>
+                    <CardTitle className="mt-3 mb-3">Crear Tareas</CardTitle>
+                    
+                    
                 </CardBody>
             </Card>
 
             {createHomework.homeworks.map((q, i) => (
-                <Card className="mb-3" style={{ background: "linear-gradient(to right, #c59fcb, #A770b2)", boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)" }}>
+                <Card className="mb-3">
                     <CardBody>
                         <CardText className="text-end">
                             {createHomework.homeworks.length !== 1 && (
@@ -96,14 +88,22 @@ export const CreateHomework = () => {
                         </CardText>
                         <FormGroup>
                             <FormControl className="mb-3" value={q.title} name="title" onChange={(e) => onChangeText(e, i)}></FormControl>
+                            <FormControl className="mb-3" value={q.description} name="description" onChange={(e) => onChangeDescription(e, i)} ></FormControl>
                             <FormControl className="mb-3" value={q.date} name="date" type="date" onChange={(e) => onChangeDate(e, i)}></FormControl>
-                            <FormControl value={q.description} name="description" onChange={(e) => onChangeDescription(e, i)} as="textarea" rows={4}></FormControl>
 
 
                         </FormGroup>
                     </CardBody>
                 </Card>
             ))}
+            <Row>
+                        <Col className="text-center">
+                            <Button  onClick={addHomework}>Agregar tarea</Button>
+                        </Col>
+                        <Col className="text-center">
+                            <Button onClick={sendData}>Guardar tarea</Button>
+                        </Col>
+                    </Row>
         </Container>
     )
 }
